@@ -7,8 +7,17 @@ app.get("/", function (req, res) {
 
 app.get("/fallinlovewith/:thing/", function (req, res) {
     var thing = req.params.thing;
-    res.render("love.ejs", {Thing: thing});
+    res.render("love.ejs", { Thing: thing });
 });
 
-app.get("*", (req, res)=> res.send("The page not found!"));
+app.get("/posts", function (req, res) {
+    var posts = [
+        {title: "Post 1", authot: "Susy"},
+        {title: "My adorable pet", authot: "Charlie"},
+        {title: "Can you believe this?", authot: "Colt"}
+    ];
+    res.render("posts.ejs", {posts: posts});
+});
+
+app.get("*", (req, res) => res.send("The page not found!"));
 app.listen(3000, () => console.log("Server is started!"));
