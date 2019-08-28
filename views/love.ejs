@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="app.css">
-    <title>Love</title>
-</head>
-
-<body>
-    <h1>You fell in love with: <%= Thing.toUpperCase() %></h1>
-    <% if(Thing.toLowerCase() == "miky"){ %>
-    <p>GOOD CHOICE! Rusty is the best</p>
-    <% } else {%>
-    <p>Bad choice!</p>
-    <% } %>
-    <p>P.S. This is the love.ejs file!</p>
-</body>
-
-</html>
+<% include partials/header %>
+<h1>You fell in love with: <%= Thing.toUpperCase() %></h1>
+<% if(Thing.toLowerCase() == "miky"){ %>
+<p>GOOD CHOICE! Rusty is the best</p>
+<% } else {%>
+<p>Bad choice!</p>
+<% } %>
+<p>P.S. This is the love.ejs file!</p>
+<% include partials/footer %>
