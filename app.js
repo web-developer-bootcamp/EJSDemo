@@ -1,13 +1,16 @@
 var express = require("express");
 var app = express();
 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
 app.get("/", function (req, res) {
-    res.render("home.ejs");
+    res.render("home");
 });
 
 app.get("/fallinlovewith/:thing/", function (req, res) {
     var thing = req.params.thing;
-    res.render("love.ejs", { Thing: thing });
+    res.render("love", { Thing: thing });
 });
 
 app.get("/posts", function (req, res) {
@@ -16,7 +19,7 @@ app.get("/posts", function (req, res) {
         { title: "My adorable pet", author: "Charlie" },
         { title: "Can you believe this?", author: "Colt" }
     ];
-    res.render("posts.ejs", {Posts: posts});
+    res.render("posts", {Posts: posts});
 });
 
 app.get("*", (req, res) => res.send("The page not found....................."));

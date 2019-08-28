@@ -1,13 +1,29 @@
-<h1>The Posts Page</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<% for(var i = 0; i < Posts.length; i++){ %>
-<li>
-    <%= Posts[i].title %> - <strong><%= Posts[i].author %></strong>
-</li>
-<% } %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="app.css">
+    <title>Posts</title>
+</head>
 
-<% Posts.forEach(function(post){ %>
-<li>
-    <%= post.title %> - <strong><%= post.author %></strong>
-</li>
-<% }) %>
+<body>
+
+    <h1>The Posts Page</h1>
+
+    <% for(var i = 0; i < Posts.length; i++){ %>
+    <li>
+        <%= Posts[i].title %> - <strong><%= Posts[i].author %></strong>
+    </li>
+    <% } %>
+
+    <% Posts.forEach(function(post){ %>
+    <li>
+        <%= post.title %> - <strong><%= post.author %></strong>
+    </li>
+    <% }) %>
+</body>
+
+</html>
